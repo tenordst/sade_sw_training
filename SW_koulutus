@@ -26,6 +26,11 @@ Agenda
 - Python perusteita jatkuu: kertaus & funktiot
 - Lottopeli harjoituksena
   - Vaatimusten pilkkominen eri funktioiksi
+      - Lottopelin perusvaatimukset
+         -
+         -
+         -
+         -
 - Jakaudutaan pareiksi
   - Juha & Pasi
   - Tuomo & Janne
@@ -34,9 +39,20 @@ Agenda
   - Ohjelmistokehitys ympäristö pystyyn
       - Gitin asentaminen & käyttöönotto
          - https://git-scm.com/download/win
-         - https://github.com/tenordst/sade_sw_training.git
+         - https://www.atlassian.com/git/tutorials
+         - Koulutuksen Git repo
+            - https://github.com/tenordst/sade_sw_training.git   
+         - Git versiohallinnan perusteita
+            - https://www.atlassian.com/git/tutorials/what-is-version-control
+         - Harjoitus
+            - Lisää oma hakemisto
+            - Lisää omaan hakemistoon Pythonilla tehty Hello World jossa Hello World tehdään funktiossa
+            - Lisää tiedosto git repositoryyn
+            - Muuta ohjelmaa niin, että Hello World sijaan Hello SADE!
+            - Tee commit ja puske se git repooon
+            - Hae muiden tekemät muutokset      
       - Visual Studio Code
          - Website: https://code.visualstudio.com/
          - Python tools: https://marketplace.visualstudio.com/items?itemName=ms-python.python
-      - Funktio: Arvo lottonumero
-      - Funktio: Tarkista lottonumero annettua numeroa vastaan
+   - Lottopelin tekeminen funktioilla
+      - Random number: https://www.pythoncentral.io/how-to-generate-a-random-number-in-python/
