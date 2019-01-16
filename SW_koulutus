@@ -1,0 +1,42 @@
+1. Koulutus - 8.1.2019
+======================
+
+Agenda
+======
+- Python perusteita: data tyypit & muuttujat, stringit, operaattorit, ehtolausekkeet (if-else), loopit, listat
+- Tavoitteena saada perusteet haltuun Pythonin osalta 
+- Materiaalit & harjoitukset
+  - https://www.learnpython.org
+  - https://www.hackerrank.com
+
+Harjoitukset
+============
+- Arithmetic Operators: https://www.hackerrank.com/challenges/python-arithmetic-operators/problem
+- Python if-else: https://www.hackerrank.com/challenges/py-if-else/problem
+- Division: https://www.hackerrank.com/challenges/python-division/problem
+- Loops: https://www.hackerrank.com/challenges/python-loops/problem
+- String split and join: https://www.hackerrank.com/challenges/python-string-split-and-join/problem
+- Find a string: https://www.hackerrank.com/challenges/find-a-string/problem
+
+2. Koulutus - 16.1.2019
+=======================
+
+Agenda
+======
+- Python perusteita jatkuu: kertaus & funktiot
+- Lottopeli harjoituksena
+  - Vaatimusten pilkkominen eri funktioiksi
+- Jakaudutaan pareiksi
+  - Juha & Pasi
+  - Tuomo & Janne
+  - Tero & Marko
+- Harjoitukset
+  - Ohjelmistokehitys ympäristö pystyyn
+      - Gitin asentaminen & käyttöönotto
+         - https://git-scm.com/download/win
+         - https://github.com/tenordst/sade_sw_training.git
+      - Visual Studio Code
+         - Website: https://code.visualstudio.com/
+         - Python tools: https://marketplace.visualstudio.com/items?itemName=ms-python.python
+      - Funktio: Arvo lottonumero
+      - Funktio: Tarkista lottonumero annettua numeroa vastaan
