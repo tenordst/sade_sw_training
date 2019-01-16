@@ -27,10 +27,9 @@ Agenda
 - Lottopeli harjoituksena
   - Vaatimusten pilkkominen eri funktioiksi
       - Lottopelin perusvaatimukset
-         -
-         -
-         -
-         -
+         - Pitää pystyä arpomaan seitsemän eri numeroa sisältävä lottorivi (numerot välillä 1...39)
+         - Kysyä käyttäjältä käyttäjän oma lottorivi tai arpoa käyttäjälle valmis
+         - Pitää pystyä tarkistamaan kuinka monta arvoa on oikein arvotun ja annetun rivin välillä
 - Jakaudutaan pareiksi
   - Juha & Pasi
   - Tuomo & Janne
