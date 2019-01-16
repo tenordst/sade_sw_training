@@ -1,4 +1,4 @@
-def test(teksti):
+def test():
     teksti = "Hello"
     return teksti
 
