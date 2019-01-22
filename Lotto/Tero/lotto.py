@@ -1,3 +1,4 @@
+# coding=utf-8
 import random
 
 min_arvo = 1
@@ -18,4 +19,29 @@ def arvo_rivi(n):
                 break
     return rivi
 
-print (arvo_rivi(lotto_numeroita))
+def anna_rivi(n):
+    rivi = []
+    for x in range(n):
+        while (True):
+            uusi_luku = int(raw_input(str(rivi) + " - anna lottonumero: "))
+            if (uusi_luku < min_arvo) or (uusi_luku > max_arvo):
+                print ("Lottonumeron pitää olla välillä %d-%d" % (min_arvo,max_arvo))
+            else:
+                if not (arvottu_jo(rivi, uusi_luku)):
+                    rivi.append(uusi_luku)
+                    break
+                else:
+                    print ("Lottonumero annettu jo")
+    return rivi
+
+def vertaile_rivit(rivi1, rivi2):
+    oikein = 0
+    return oikein
+
+annettu_rivi = anna_rivi(lotto_numeroita)
+print ("Annettu rivi " + str(annettu_rivi))
+arvottu_rivi = arvo_rivi(lotto_numeroita)
+print ("Arvottu rivi " + str(arvottu_rivi))
+
+oikein = vertaile_rivit(annettu_rivi, arvottu_jo)
+print ("Onneksi olkoon, sait %d oikein" % oikein)
