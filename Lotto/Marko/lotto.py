@@ -7,17 +7,18 @@ lotto_lisanumeroita = 3
 def arvottu_jo(rivi, uusi):
     return uusi in rivi
 
-def kysy_numerot(pelaajan_omat, pelaajan_luku):
+def kysy_numerot(n):
     pelaajan_omat = []
     for i in range (n):
         while (True):
             pelaajan_luku = int(raw_input(str(pelaajan_omat) + "Anna lottonumeroita"))
             if not (arvottu_jo(pelaajan_omat, pelaajan_luku)):
-                pelaajan_rivi.append(pelaajan_luku)
+                pelaajan_omat.append(pelaajan_luku)
                 break
-    return pelaajan_rivi
+    return pelaajan_omat
 
-print (kysy_numerot(pelaajan_omat))
+annetut_luvut = kysy_numerot(lotto_numeroita)
+print (annetut_luvut)
         
 
        
