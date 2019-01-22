@@ -1,3 +1,4 @@
+# coding=utf-8
 import random
 min_arvo = 1
 max_arvo = 39
@@ -17,12 +18,10 @@ def kysy_numerot(n):
                 break
     return pelaajan_omat
 
+# Kysytään annetut luvut
 annetut_luvut = kysy_numerot(lotto_numeroita)
 print (annetut_luvut)
         
-
-       
-
 def arvo_rivi(n):
     rivi = []
     for x in range(n):
