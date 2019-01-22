@@ -36,12 +36,18 @@ def anna_rivi(n):
 
 def vertaile_rivit(rivi1, rivi2):
     oikein = 0
+    for x in rivi1:
+        for y in rivi2:
+            if (x == y):
+                oikein = oikein + 1
     return oikein
 
 annettu_rivi = anna_rivi(lotto_numeroita)
 print ("Annettu rivi " + str(annettu_rivi))
-arvottu_rivi = arvo_rivi(lotto_numeroita)
-print ("Arvottu rivi " + str(arvottu_rivi))
 
-oikein = vertaile_rivit(annettu_rivi, arvottu_jo)
-print ("Onneksi olkoon, sait %d oikein" % oikein)
+for i in range(10):
+    arvottu_rivi = arvo_rivi(lotto_numeroita)
+    print ("Arvottu rivi " + str(arvottu_rivi))
+
+    oikein = vertaile_rivit(annettu_rivi, arvottu_rivi)
+    print ("Onneksi olkoon, sait %d oikein" % oikein)
