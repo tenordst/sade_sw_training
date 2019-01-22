@@ -34,4 +34,14 @@ def anna_rivi(n):
                     print ("Lottonumero annettu jo")
     return rivi
 
-print (anna_rivi(lotto_numeroita))
+def vertaile_rivit(rivi1, rivi2):
+    oikein = 0
+    return oikein
+
+annettu_rivi = anna_rivi(lotto_numeroita)
+print ("Annettu rivi " + str(annettu_rivi))
+arvottu_rivi = arvo_rivi(lotto_numeroita)
+print ("Arvottu rivi " + str(arvottu_rivi))
+
+oikein = vertaile_rivit(annettu_rivi, arvottu_jo)
+print ("Onneksi olkoon, sait %d oikein" % oikein)
