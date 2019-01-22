@@ -12,7 +12,7 @@ def kysy_numerot(n):
     pelaajan_omat = []
     for i in range (n):
         while (True):
-            pelaajan_luku = int(raw_input(str(pelaajan_omat) + "Anna lottonumeroita"))
+            pelaajan_luku = int(input(str(pelaajan_omat) + "Anna lottonumeroita: "))
             if not (arvottu_jo(pelaajan_omat, pelaajan_luku)):
                 pelaajan_omat.append(pelaajan_luku)
                 break
