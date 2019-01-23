@@ -58,4 +58,19 @@ Agenda
 
 3. Koulutus - 22.1.2019
 =======================
-- 
+- Debuggaus
+  - Logitus vs. debugger
+  - Debugger perusteet
+- Lottopeli harjoituksena
+  - Vaatimusten pilkkominen eri funktioiksi
+      - Lottopelin perusvaatimukset
+         - Pitää pystyä arpomaan seitsemän eri numeroa sisältävä lottorivi (numerot välillä 1...39) -> DONE
+         - Kysyä käyttäjältä käyttäjän oma lottorivi tai arpoa käyttäjälle valmis rivi
+         - Pitää pystyä tarkistamaan kuinka monta arvoa on oikein arvotun ja annetun rivin välillä
+         - Lisävaatimus: Tee tuki 8 ja 9 luvun järjestelmälle
+- Lottopelin tekeminen funktioilla
+   - Random number: https://www.pythoncentral.io/how-to-generate-a-random-number-in-python/
+- Kotitehtävä
+   - Lisää lottoon seuraavat ominaisuudet
+      - Mahdollisuus määritellä montako kertaa lottoarvonta tehdään
+      - Yhteenveto siitä kuinka monta kertaa x oikein löytyi kaikkien arvontojen osalta
