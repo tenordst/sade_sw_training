@@ -85,5 +85,39 @@ Agenda
    - Luokan metodit/funktiot
 - Harjoitus 
    - Lottopelin muuttaminen olio-ohjelmoinnin perusteiden mukaiseksi
-      - Mistä luokista/olioista lotto voisi koostua?
-      - Mitä dataa (= muuttujia) ja toimintoja kussakin luokassa pitäisi olla?
+      - Mistä luokista/olioista lotto voisi koostua? Mitä dataa (= muuttujia) ja toimintoja kussakin luokassa pitäisi olla?
+         - Lottokone
+            * arvo_rivi() => Lottorivi olio
+         - Lottorivi
+            - pituus (luokan attribuutti)
+            - rivi (instance attribuutti)
+            * tulosta() => string
+            * lisaa_numero(numero) => True/False (boolean)
+            * vertailu(toinen_rivi) => oikein (int)
+         - Kayttaja
+            - nimi (instance attribuutti)
+            * anna_rivi() => Lottorivi olio
+            * arvo_rivi() => Lottorivi olio
+         - Tarkistaja
+            - potti (instance attribuutti)
+            * kerro_tulos(kayttaja, rivi_a, rivi_b)
+   - Kotitehtävä 
+      - Implementoi yllä olevan speksin mukainen luokkarakenne ja metodit
+      - Tee main funktio joka
+         1) Arpoo voittorivin Lottokoneella
+         2) Pyytää käyttäjältä rivin Kayttaja olion avulla
+         3) Pyytää Tarkistaja oliota kertomaan mikä oli tulosta
+      - Teron hakemiston alla esimerkkiä jos tarvitsee apuja
+   - Lisätehtävä
+      - Arvo voittorivi Lottokoneella
+      - Pyydä käyttäjältä yksi rivi
+      - Arvo 100000 muulle käyttäjälle oma rivi
+      - Anna arvottu voittorivi, itse annettu rivi + 100000 muiden käyttäjien riviä Tarkistajalle
+      - Tarkistaja laskee kaikkien käyttäjien rivien tulokset, määrittelee voittopotin per x oikein ja kertoo itse annetun rivin osalta paljonko voittoa tuli
+         - Voittopotin voi määritellä vaikka niin, että
+            - 80% voitosta jaetaan 7 oikein saaneille
+            - 10% voitosta jaetaan 6 oikein saaneille
+            - 5% voitosta jaetaan 5 oikein saaneille
+            - 3% voitosta jaetaan 4 oikein saaneille
+            - 2% voitosta jaetaan 3 oikein saaneille
+         
