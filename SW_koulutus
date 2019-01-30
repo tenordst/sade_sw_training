@@ -74,3 +74,16 @@ Agenda
    - Lisää lottoon seuraavat ominaisuudet
       - Mahdollisuus määritellä montako kertaa lottoarvonta tehdään
       - Yhteenveto siitä kuinka monta kertaa x oikein löytyi kaikkien arvontojen osalta
+
+4. Koulutus - 30.1.2019
+=======================
+- Object Oriented Programming (OOP) aka olio-ohjelmointi Pythonilla
+   - https://realpython.com/python3-object-oriented-programming/
+   - Luokat ja oliot
+   - Olioiden luominen
+   - Olio- ja luokkamuuttujat
+   - Luokan metodit/funktiot
+- Harjoitus 
+   - Lottopelin muuttaminen olio-ohjelmoinnin perusteiden mukaiseksi
+      - Mistä luokista/olioista lotto voisi koostua?
+      - Mitä dataa (= muuttujia) ja toimintoja kussakin luokassa pitäisi olla?
