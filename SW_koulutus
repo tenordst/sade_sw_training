@@ -120,4 +120,34 @@ Agenda
             - 5% voitosta jaetaan 5 oikein saaneille
             - 3% voitosta jaetaan 4 oikein saaneille
             - 2% voitosta jaetaan 3 oikein saaneille
+
+5. Koulutus - 5.2.2019
+=======================
+- Olio-ohjelmoinnin jatko
+   - Perintä/inheritance
+      - https://realpython.com/python3-object-oriented-programming/#python-object-inheritance
+   - Data encapsulation
+      - https://www.python-course.eu/python3_object_oriented_programming.php
+      - Public, protected ja private instance attribuutit/muuttujat
+   - Destructor/olioiden tuhominen
+- Moduulit ja sisäänrakennetut kirjastot
+   - https://www.learnpython.org/en/Modules_and_Packages
+   - https://docs.python.org/3/library/
+- Harjoitus
+   - Nibe lämpöpumpun logien analysointi
+      - Vaatimukset
+         - Kustakin päivittäisestä logitiedosta muodostetaan .png kuvaaja jossa näkyy eri parametrit visualisoituna kuvaajana
+         - Muodostetaan myös kuukausikohtainen summary kuvaaja josta näkyy per päivä halutut arvot
+            - Käynnistyskerrat
+      - Luokkarakenne
+      - Log .csv tiedoston lataaminen olioon, tarvittavia moduuleja/luokkia
+         - csv
+         - numpy
+         - panda
+         - matplotlib
+
+
+
+
+
          
