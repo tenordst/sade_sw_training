@@ -6,7 +6,6 @@ from Heatpump import Log
 # to:do
 #   useamman login purku samalla kertaa
 #   summary
-# www.gpsinformation.org/dale/nmea.htm
 ##############################################################################################################################
 #  - Nibe lämpöpumpun logien analysointi
 #       - Vaatimukset
@@ -19,13 +18,7 @@ from Heatpump import Log
 #          - numpy
 #          - panda
 # - matplotlib
-# Date	        Time	Version	    BT1	BT1 Mean BT2 BT3 BT10	BT11 Calc Supply GM	Alarm	RELAYS PCA BASE	BT12	BT14	BT17Tot.int.add. Prio	BT6	BT50
-# 2016-02-25	10:07:08	1199	-12	-20	    344	294	35	  -6        361	    -786	0	 7	            348	    613	    43	0	        30	    443	    205
-# 2016-02-25	10:08:08	1199	-12	-20	    348	298	35	  -5        361	    -802	0	 7	            352	    617	    38	0	        30	    443	    205
-
 ###########################################################################################################################
-
-
 
 class Summary():
     def __init__(self):
