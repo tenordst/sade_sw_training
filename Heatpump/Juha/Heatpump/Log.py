@@ -10,22 +10,45 @@ import pandas as pd
 from os import system, name 
 
 class Log():
-    def __init__(self):
-        self.loki=''  #input log nimi, xxx.LOG
+    def __init__(self,lokiNimi):
+        self.lokiNimi=lokiNimi  #input log nimi, xxx.LOG
+        self.lokiKuukausi=lokiNimi[:4]
         self.loppulista=[]
         self.output_file=''        
         
-    def lue_logi(self):
-        self.tsekkaa_hakemistot("data/","csv/","kuvat/") #onko jo olemassa, jos ei niin luodaan
-        fileet =glob.glob("data/*.LOG") #hakee hakemistossa olevat fileet
+    def lue_logi(self, fileet):
+        if len(self.lokiNimi) ==4:
+            self.hoida_kuukausi(fileet)
+            self.output_file=self.lokiNimi+'.csv' #.split('.')[0] +'.csv'
+            myFile=open('./data/'+self.lokiNimi+'.LOG',mode='r') # luetaan file
+            rivit=list(myFile.readlines())
+            self.loppulista=self.pura_log(rivit)
+            self.kirjoita_tiedostoon()
+        else:
+            self.hoida_kuukausi(fileet)
+            self.output_file=self.lokiNimi[:-4]+'.csv' #.split('.')[0] +'.csv'
+            myFile=open('./data/'+self.lokiKuukausi+'.log',mode='r') # luetaan file
+            rivit=list(myFile.readlines())
+            self.loppulista=self.pura_log(rivit)
+            self.kirjoita_tiedostoon()
+    def hoida_kuukausi(self,fileet):
+        with open('./data/'+self.lokiKuukausi+'.log',"w") as outfile:
+            outfile.write('')
         for i,n in enumerate(fileet):
-            print('Hakemistosta löytyy: ',fileet[i].split('\\')[1])
-        self.loki=input('Anna LOG-tekstifile-nimi (data-hakemistossa): ')
-        self.output_file=self.loki.split('.')[0] +'.csv'
-        myFile=open('./data/'+self.loki,mode='r') # luetaan nmea-file
-        rivit=list(myFile.readlines())
-        self.loppulista=self.pura_log(rivit)
-        self.kirjoita_tiedostoon()
+            if ((n.split('\\')[1])[:4]) == self.lokiNimi[:4]:
+                with open('./data/'+self.lokiKuukausi+'.log',"a") as outfile:
+                    with open(n) as f1:
+                        for line in f1:
+                            outfile.write(line)
+        f = open('./data/'+self.lokiKuukausi+'.log',"r")
+        lines = f.readlines()
+        f.close()
+        f = open('./data/'+self.lokiKuukausi+'.log',"w")
+        f.write(lines[0])
+        f.write(lines[1])
+        for line in lines:
+            if not line.startswith("D"):
+                f.write(line)
 
     def tsekkaa_hakemistot(self,a,b,c):
         if not os.path.exists(a):
@@ -45,7 +68,9 @@ class Log():
             loppulista.append(fields)
         return loppulista
 
-    def kirjoita_tiedostoon(self):
+    def kirjoita_tiedostoon(self, tiedosto='',rivit=''):
+        if tiedosto=='':
+            tiedosto =self.output_file
         otsikko =self.loppulista[0]
         otsikko[3]="Ulkolampotila_index"
         otsikko[5]="Lammitys_meno_index"
@@ -56,13 +81,27 @@ class Log():
         otsikko[10]="Asteminuutit_index"
         otsikko[17]="Toimintatila_index"
         otsikko[18]="Kayttovesi_index"
-        with open('./csv/'+self.output_file, "w") as f:
+        if len(self.lokiNimi)>4:
+            temp=[otsikko]
+            for i in self.loppulista[1:]:
+                if i[0]==('20'+self.lokiNimi[:2]+'-'+self.lokiNimi[2:4]+'-'+self.lokiNimi[4:6]):
+                    temp.append(i)
+            self.loppulista=temp   
+        
+        with open('./csv/'+tiedosto, "w") as f:
             writer = csv.writer(f, lineterminator='\n')
             writer.writerows(self.loppulista)
         f.close()
 
-    def plottaa(self):
-        df = pd.read_csv('./csv/'+self.output_file)
+    def plottaa(self,lokiNimi):
+        df1 = pd.read_csv('./csv/'+self.output_file)
+        if len(self.lokiNimi) !=4: #annettu kuukausi
+            filtteri='20'+lokiNimi[:2]+'-'+lokiNimi[2:4]+'-'+lokiNimi[4:6]
+            df=df1[df1['Date'].str.startswith(filtteri)]
+        else:
+            filtteri='20'+lokiNimi[:2]+'-'+lokiNimi[2:4]
+            df=df1[df1['Date'].str.startswith(filtteri)]
+
         tulo = df['Lammitys_tulo_index'] /10
         meno = df['Lammitys_meno_index'] /10
         kaivo_meno = df['Kaivo_meno_index'] /10
@@ -72,9 +111,7 @@ class Log():
         tavoitearvot =df['Laskettu_meno_index'] /10
         asteminuutit =df['Asteminuutit_index'] /10
 
-        # kaivo_meno=kaivo_meno.iloc[kaivo_meno.to_numpy().nonzero()] #nollat pois ennen laskelmaa
-  
-        fig,ax=plt.subplots(nrows=2,ncols=1,figsize=(20, 10), dpi=100)#figsize=(20, 10), dpi=100)            
+        fig,ax=plt.subplots(nrows=2,ncols=1,figsize=(20, 10), dpi=100)        
         ax1_plotit=[tulo,meno,kayttovesilampo,tavoitearvot]
         for i in range(4):
             ax[0].plot(ax1_plotit[i],label=["Lämmitys tulo","Lämmitys meno","Käyttövesi","Tavoitearvot"][i], lw=1)
@@ -92,8 +129,8 @@ class Log():
         ax[1].legend(fontsize=10, loc="upper left")
         ax[0].legend(fontsize=10, loc="best")
         ax2.legend(fontsize=10, loc="best")
-        plt.title(self.loki,fontsize=12, color="darkred", loc="center")
-        image_nimi=self.loki.split('.')[0]  #.csv-liite pois
+        plt.title(self.lokiNimi,fontsize=12, color="darkred", loc="center")
+        image_nimi=self.lokiNimi.split('.')[0]  #.csv-liite pois
         plt.savefig('./kuvat/'+image_nimi, bbox_inches='tight')
         plt.tight_layout() 
         plt.show()
