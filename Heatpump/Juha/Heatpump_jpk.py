@@ -2,10 +2,11 @@ import os
 import glob
 from os import system, name 
 from Heatpump import Log
+from Heatpump import Summaa
 
 # to:do
 #   useamman login purku samalla kertaa
-#   summary
+#   
 ##############################################################################################################################
 #  - Nibe lämpöpumpun logien analysointi
 #       - Vaatimukset
@@ -39,11 +40,6 @@ def tsekkaa_hakemistot(a,b,c):
         os.makedirs(c)
 ##################### Main ###############
 clear()
-# Määrittää lämpötilan jolloin pumpun tulkitaan olevan päällä
-kaivo_meno_raja = 2 # 0.2C
-lisalampo_raja = -400
-pumppu_kaynnistyy = -60
-pumppu_pysahtyy = 0
 
 print('Hakee heatpump log-fileistä tiedot, ja tallentaa sekä plottaa kuvat ')
 print('File-sijainnit: data-hakemistossa input logs (*.LOG), csv-hakemistoon tulostuu csv ja kuvat-hakemistoon png\n')
@@ -57,4 +53,9 @@ lokiNimi=input('\nAnna tiedoston nimi (esim 160225-1.LOG), tai kuukausi (1602): 
 loki =Log.Log(lokiNimi)
 loki.lue_logi(fileet)
 loki.plottaa(lokiNimi)
+
+summa=Summaa.Summaa(lokiNimi)
+summa.laskeJaPrinttaa()
+summa.tulostaSummary()
 loki.korjaa_csv_pilkut()
+summa.korjaa_csv_pilkut()

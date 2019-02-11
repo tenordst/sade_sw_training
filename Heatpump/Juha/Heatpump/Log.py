@@ -95,13 +95,12 @@ class Log():
 
     def plottaa(self,lokiNimi):
         df1 = pd.read_csv('./csv/'+self.output_file)
-        if len(self.lokiNimi) !=4: #annettu kuukausi
+        if len(self.lokiNimi) !=4: #annettu päivä
             filtteri='20'+lokiNimi[:2]+'-'+lokiNimi[2:4]+'-'+lokiNimi[4:6]
             df=df1[df1['Date'].str.startswith(filtteri)]
-        else:
+        else: #  annettu kuukausi
             filtteri='20'+lokiNimi[:2]+'-'+lokiNimi[2:4]
             df=df1[df1['Date'].str.startswith(filtteri)]
-
         tulo = df['Lammitys_tulo_index'] /10
         meno = df['Lammitys_meno_index'] /10
         kaivo_meno = df['Kaivo_meno_index'] /10
@@ -110,13 +109,18 @@ class Log():
         kayttovesilampo =df['Kayttovesi_index'] /10
         tavoitearvot =df['Laskettu_meno_index'] /10
         asteminuutit =df['Asteminuutit_index'] /10
-
+        aika=pd.to_datetime(df.Time).dt.time
+        
         fig,ax=plt.subplots(nrows=2,ncols=1,figsize=(20, 10), dpi=100)        
-        ax1_plotit=[tulo,meno,kayttovesilampo,tavoitearvot]
+        ax0_plotit=[tulo,meno,kayttovesilampo,tavoitearvot]
         for i in range(4):
-            ax[0].plot(ax1_plotit[i],label=["Lämmitys tulo","Lämmitys meno","Käyttövesi","Tavoitearvot"][i], lw=1)
+            if len(self.lokiNimi)==4:
+                ax[0].plot(ax0_plotit[i],label=["Lämmitys tulo","Lämmitys meno","Käyttövesi","Tavoitearvot"][i], lw=1)
+            else:
+                ax[0].plot(aika,ax0_plotit[i],label=["Lämmitys tulo","Lämmitys meno","Käyttövesi","Tavoitearvot"][i], lw=1)
         ax[0].legend(fontsize=10, loc="best")
         plt.ylabel("Asteita", fontsize=10)
+        ax[0].set_title(self.lokiNimi,fontsize=20,color="darkred",fontstyle='italic')
         ax[0].set_ylabel("Asteita", fontsize=10) 
         ax[0].set_xlabel("Aika", fontsize=10)   
         ax[0].grid(True, which='major',color ="black",linestyle=':', linewidth=0.3)
@@ -129,7 +133,8 @@ class Log():
         ax[1].legend(fontsize=10, loc="upper left")
         ax[0].legend(fontsize=10, loc="best")
         ax2.legend(fontsize=10, loc="best")
-        plt.title(self.lokiNimi,fontsize=12, color="darkred", loc="center")
+
+        
         image_nimi=self.lokiNimi.split('.')[0]  #.csv-liite pois
         plt.savefig('./kuvat/'+image_nimi, bbox_inches='tight')
         plt.tight_layout() 
