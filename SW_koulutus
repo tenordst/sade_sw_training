@@ -147,6 +147,36 @@ Agenda
          - matplotlib
 
 
+6. Koulutus - 13.2.2019
+=======================
+- Olio-ohjelmoinnin jatko
+   - Perintä/inheritance & data encapsulation kertaus
+      - https://realpython.com/python3-object-oriented-programming/#python-object-inheritance
+      - https://www.python-course.eu/python3_object_oriented_programming.php
+   - Rajapinnat/interfaces pythonilla
+      - http://masnun.rocks/2017/04/15/interfaces-in-python-protocols-and-abcs/
+   - UML ja luokkakaaviot
+      - https://www.ibm.com/developerworks/rational/library/content/RationalEdge/sep04/bell/index.html
+      - https://www.draw.io
+- Harjoitus
+   - Nibe lämpöpumpun logien analysointi
+      - Vaatimukset
+         - Kustakin päivittäisestä logitiedosta muodostetaan .png kuvaaja jossa näkyy eri parametrit visualisoituna kuvaajana
+         - Muodostetaan myös kuukausikohtainen summary kuvaaja josta näkyy per päivä halutut arvot
+            - Käynnistyskerrat
+      - Luokkarakenne
+      - Log .csv tiedoston lataaminen olioon, tarvittavia moduuleja/luokkia
+         - csv
+         - numpy
+         - panda
+         - matplotlib
+- Miten jatketaan
+   - Keskitytään enemmän harjoitusten tekemiseen yhdessä vs. opiskellaan uusia asiota + oletetaan että harjoituksen tehdään omalla ajalla?
+   - Python vs. C/C++ vs. jokin muu kieli
+   - Algoritmit & tietorakenteet
+   - Web UI kehitys, backend kehitys, machine learning, jne?
+
+
 
 
 
