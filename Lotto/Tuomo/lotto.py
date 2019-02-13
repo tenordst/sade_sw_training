@@ -5,6 +5,8 @@ min_arvo = 1
 max_arvo = 39
 lotto_numeroita = 7
 lotto_lisänumerot = 3
+arvontojen_maara = 100
+
 
 
 def arvottu_jo(rivi, uusi):
@@ -13,6 +15,7 @@ def arvottu_jo(rivi, uusi):
 
 def anna_rivi(n):
     rivi = []
+    
     for x in range(n):
         
         while True:
@@ -24,7 +27,8 @@ def anna_rivi(n):
                     rivi.append(uusi_numero)
                     break
                 else:
-                     print("luku on jo annettu")   
+                     print("luku on jo annettu")
+                        
     return rivi
         
             
@@ -32,6 +36,7 @@ def anna_rivi(n):
 
 def arvo_rivi(n):
     rivi = []
+    uusinta = 0
     for x in range(n):
         
         while True:
@@ -39,10 +44,11 @@ def arvo_rivi(n):
             if not arvottu_jo(rivi, uusi_numero):
                 rivi.append(uusi_numero)
                 break
-            print ("uusiks meni")
-        
-    return rivi
+            uusinta = uusinta + 1
+            print ("uusiks meni ", uusinta)
+            
 
+    return rivi, uusinta
 
 
 def vertaile_numerot (rivi1, rivi2):
@@ -59,19 +65,37 @@ def vertaile_numerot (rivi1, rivi2):
 
 
 
+def arvonta (n):
+
+    annettu = anna_rivi(lotto_numeroita)
+
+    tilasto = [0] * lotto_numeroita
+    maara = 0
+    for x in range(n):
+        arvottu, uusinta = arvo_rivi(lotto_numeroita)
+        #print ("++++")
+        #print (arvottu)
+        #print ("------")
+        #print (annettu)
 
 
-annettu = anna_rivi(lotto_numeroita)
+        oikein, oikeat_numerot = vertaile_numerot(annettu, arvottu)
+        #print (oikein, " numeroa oli oikein")
+        #print ("seuraavat numerot olivat oikein ", oikeat_numerot)
+        
+        maara = tilasto[oikein]
+        #print("maara", maara)
+        tilasto[oikein] = maara + 1
+        #tilasto.insert(oikein, (maara + 1))
+        #print ("******* ", tilasto)
+        uusinta = uusinta + 1
+    return tilasto, uusinta
+    
+tilasto, uusinta = arvonta(arvontojen_maara)
 
-for x in range(100):
-    arvottu = arvo_rivi(lotto_numeroita)
-    print ("++++")
-    print (arvottu)
-    print ("------")
-    print (annettu)
+print("arvontojen määrä oli ", arvontojen_maara)
 
+print (tilasto)
+print ("uusintoja oli ", uusinta)
 
-    oikein, oikeat_numerot = vertaile_numerot(annettu, arvottu)
-    print (oikein, " numeroa oli oikein")
-    print ("seuraavat numerot olivat oikein ", oikeat_numerot)
     
