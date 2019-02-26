@@ -177,6 +177,41 @@ Agenda
    - Web UI kehitys, backend kehitys, machine learning, jne?
 
 
+7. Koulutus - 26.2.2019
+=======================
+- Harjoituksia
+   - Lottopelin tekeminen
+      - Pitää pystyä arpomaan seitsemän eri numeroa sisältävä lottorivi (numerot välillä 1...39) -> DONE
+         - Kysyä käyttäjältä käyttäjän oma lottorivi tai arpoa käyttäjälle valmis rivi
+         - Pitää pystyä tarkistamaan kuinka monta arvoa on oikein arvotun ja annetun rivin välillä
+      - Mistä luokista/olioista lotto voisi koostua? Mitä dataa (= muuttujia) ja toimintoja kussakin luokassa pitäisi olla?
+         - Lottokone
+            * arvo_rivi() => Lottorivi olio
+         - Lottorivi
+            - pituus (luokan attribuutti)
+            - rivi (instance attribuutti)
+            * tulosta() => string
+            * lisaa_numero(numero) => True/False (boolean)
+            * vertailu(toinen_rivi) => oikein (int)
+         - Kayttaja
+            - nimi (instance attribuutti)
+            * anna_rivi() => Lottorivi olio
+            * arvo_rivi() => Lottorivi olio
+         - Tarkistaja
+            - potti (instance attribuutti)
+            * kerro_tulos(kayttaja, rivi_a, rivi_b)
+   - Nibe lämpöpumpun logien analysointi
+         - Vaatimukset
+         - Kustakin päivittäisestä logitiedosta muodostetaan .png kuvaaja jossa näkyy eri parametrit visualisoituna kuvaajana
+         - Muodostetaan myös kuukausikohtainen summary kuvaaja josta näkyy per päivä halutut arvot
+            - Käynnistyskerrat
+      - Luokkarakenne
+      - Log .csv tiedoston lataaminen olioon, tarvittavia moduuleja/luokkia
+         - csv
+         - numpy
+         - panda
+         - matplotlib
+
 
 
 
