@@ -179,9 +179,13 @@ Agenda
 
 7. Koulutus - 26.2.2019
 =======================
+- Agenda
+   - Ei uusia asioita, kerrataan Python perusteita + tehdään alla olevia harjoituksia
+  - https://www.learnpython.org
 - Harjoituksia
    - Lottopelin tekeminen
-      - Pitää pystyä arpomaan seitsemän eri numeroa sisältävä lottorivi (numerot välillä 1...39) -> DONE
+      - Vaatimukset
+         - Pitää pystyä arpomaan seitsemän eri numeroa sisältävä lottorivi (numerot välillä 1...39)
          - Kysyä käyttäjältä käyttäjän oma lottorivi tai arpoa käyttäjälle valmis rivi
          - Pitää pystyä tarkistamaan kuinka monta arvoa on oikein arvotun ja annetun rivin välillä
       - Mistä luokista/olioista lotto voisi koostua? Mitä dataa (= muuttujia) ja toimintoja kussakin luokassa pitäisi olla?
@@ -201,17 +205,42 @@ Agenda
             - potti (instance attribuutti)
             * kerro_tulos(kayttaja, rivi_a, rivi_b)
    - Nibe lämpöpumpun logien analysointi
-         - Vaatimukset
+      - Vaatimukset
          - Kustakin päivittäisestä logitiedosta muodostetaan .png kuvaaja jossa näkyy eri parametrit visualisoituna kuvaajana
          - Muodostetaan myös kuukausikohtainen summary kuvaaja josta näkyy per päivä halutut arvot
             - Käynnistyskerrat
       - Luokkarakenne
       - Log .csv tiedoston lataaminen olioon, tarvittavia moduuleja/luokkia
-         - csv
          - numpy
+            - Yleinen matematiikkakirjasto
          - panda
+            - Kirjasto csv tiedostojen käsittelyyn
          - matplotlib
+            - Kirjasto diagrammien piirtämiseksi
 
+
+8. Koulutus - 5.3.2019
+======================
+
+Agenda
+======
+- Vanhojen harjoitusten jatkaminen + Hacker Rank harjoitusten tekeminen
+  - https://www.learnpython.org
+  - https://www.hackerrank.com
+- Seuraavien kertojen sisältö
+
+Harjoitukset
+============
+- Kts edellisen kerran Lotto & Lämpöpumppu
+- Hacker Rank
+   - Arithmetic Operators: https://www.hackerrank.com/challenges/python-arithmetic-operators/problem
+   - Python if-else: https://www.hackerrank.com/challenges/py-if-else/problem
+   - Division: https://www.hackerrank.com/challenges/python-division/problem
+   - Loops: https://www.hackerrank.com/challenges/python-loops/problem
+   - String split and join: https://www.hackerrank.com/challenges/python-string-split-and-join/problem
+   - Find a string: https://www.hackerrank.com/challenges/find-a-string/problem
+   - Write a function: https://www.hackerrank.com/challenges/write-a-function/problem   
+- 
 
 
 
