@@ -242,6 +242,55 @@ Harjoitukset
    - Find the Runner-Up Score!: https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
    - String split and join: https://www.hackerrank.com/challenges/python-string-split-and-join/problem
    - Find a string: https://www.hackerrank.com/challenges/find-a-string/problem
+
+9. koulutus - 13.3.2019
+=======================
+
+Agenda
+======
+- Pilvipalvelut ja niiden arkkitehtuurit
+   - https://docs.aws.amazon.com/aws-technical-content/latest/aws-overview/introduction.html
+   - Serverless cloud services: Kts. Building serverless backend with AWS intro.pptx (Presentations hakemisto)
+   - AWS Console intro 
+- AWS CLI:n (komentorivityökalu) asennus
+   - Asennus: https://docs.aws.amazon.com/cli/latest/userguide/install-windows.html
+      - Käyttäkää pip menetelmää
+      - pip3 install awscli
+   - Omien access ja secret avainten generointi AWS IAM palvelua käyttäen
+      - Katsotaan yhdessä miten tehdään
+   - Konfigurointi
+      - aws configure
+         - AWS Access Key ID [****************CKEQ]: <oma access key>
+         - AWS Secret Access Key [****************WRu6]: <oma secret key>
+         - Default region name [eu-west-1]: eu-west-1
+         - Default output format [JSON]: JSON
+   - Testaus
+      - Ajakaa komento 'aws s3 ls', pitäisi näkyä
+         2018-09-11 11:15:26 academy-test-service-dev-serverlessdeploymentbuck-1wlod6cidc7wm
+         2018-08-24 09:22:04 aws-nodejs-typescript-de-serverlessdeploymentbuck-4k3z0q1orj7
+         ...
+- AWS Python SDK
+   - https://aws.amazon.com/developers/getting-started/python/
+      - pip install boto3
+   - https://aws.amazon.com/sdk-for-python/
+
+Harjoitukset
+============
+- AWS Rekognition pohjainen kuvien kategorointi
+   - Ladataan kuva analysoitavaksi AWS pilveen
+   - Vastauksena saadaan kuvan kategerisointi-informaatio JSON muodossa
+      - Python & JSON: https://www.w3schools.com/python/python_json.asp
+   - Dokumentaatio ja esimerkkejä
+      - https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html
+      - https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.detect_labels
+      - https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.compare_faces
+      - https://docs.aws.amazon.com/code-samples/latest/catalog/code-catalog-python.html
+- AWS Rekognition pohjainen kasvojen tunnistus
+   - Dokumentaatio ja esimerkkejä
+         - https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.compare_faces
+   - Toiminnallisuus
+      1) Annetaan kuva tunnistettavasta henkilöstä
+      2) Annetaan toinen kuva, tavoitteena määritellä löytyykö sama henkilö tästä kuvasta
  
 
 
