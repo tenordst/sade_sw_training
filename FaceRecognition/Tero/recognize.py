@@ -1,5 +1,6 @@
 import boto3
 import sys
+import json
 
 if __name__ == "__main__":
     sourceFile=sys.argv[1]
@@ -9,10 +10,19 @@ if __name__ == "__main__":
     imageSource=open(sourceFile,'rb')
     imageTarget=open(targetFile,'rb')
 
-    # Implement face recognition using compare_faces method 
-    # (see https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.compare_faces)
-    # Target to return if there is a match and if yes, what is the similarity %
+    response=client.compare_faces(SimilarityThreshold=70,
+                                  SourceImage={'Bytes': imageSource.read()},
+                                  TargetImage={'Bytes': imageTarget.read()})
+    
+    print (json.dumps(response, indent=4, sort_keys=True))
 
+    for faceMatch in response['FaceMatches']:
+        position = faceMatch['Face']['BoundingBox']
+        similarity = str(faceMatch['Similarity'])
+        print('The face at ' +
+               str(position['Left']) + ' ' +
+               str(position['Top']) +
+               ' matches with ' + similarity + '% similarity')
 
     imageSource.close()
-    imageTarget.close()
+    imageTarget.close() 
