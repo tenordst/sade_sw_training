@@ -292,6 +292,29 @@ Harjoitukset
       1) Annetaan kuva tunnistettavasta henkilöstä
       2) Annetaan toinen kuva, tavoitteena määritellä löytyykö sama henkilö tästä kuvasta
  
+10. koulutus - 22.3.2019
+========================
+
+Agenda
+======
+- Rekognition clientin toteutuksen jatkaminen
+- Hello World serverless lambda
+   - Installointi
+      - npm
+         - https://blog.teamtreehouse.com/install-node-js-npm-windows
+      - serverless
+         -https://medium.com/devopslinks/aws-lambda-serverless-framework-python-part-1-a-step-by-step-hello-world-4182202aba4a
+            - Aloittakaa kohdasta "Installing and Configuring Serverless Framework"
+
+Harjoitukset
+============
+- AWS Rekognition pohjainen kasvojen tunnistus
+   - Dokumentaatio ja esimerkkejä
+         - https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.compare_faces
+   - Toiminnallisuus
+      1) Annetaan kuva tunnistettavasta henkilöstä
+      2) Annetaan toinen kuva, tavoitteena määritellä löytyykö sama henkilö tästä kuvasta
+- Serverless Hello World lambda REST API
 
 
 
