@@ -291,9 +291,8 @@ Harjoitukset
    - Toiminnallisuus
       1) Annetaan kuva tunnistettavasta henkilöstä
       2) Annetaan toinen kuva, tavoitteena määritellä löytyykö sama henkilö tästä kuvasta
- 
+
 10. koulutus - 22.3.2019
-========================
 
 Agenda
 ======
@@ -315,6 +314,53 @@ Harjoitukset
       1) Annetaan kuva tunnistettavasta henkilöstä
       2) Annetaan toinen kuva, tavoitteena määritellä löytyykö sama henkilö tästä kuvasta
 - Serverless Hello World lambda REST API
+
+
+11. Koulutus - 29.3.2019
+=======================
+
+Agenda
+======
+- Robot Framework & SeleniumLibrary
+   - Intro 
+      - https://robotframework.org/#introduction
+      - https://www.slideshare.net/pekkaklarck/robot-framework-introduction
+   - Kuinka kirjoitetaan hyvä testitapaus?
+      - https://github.com/robotframework/HowToWriteGoodTestCases/blob/master/HowToWriteGoodTestCases.rst
+   - DOs and Don'ts
+      - https://www.slideshare.net/pekkaklarck/robot-framework-dos-and-donts
+   - SeleniumLibrary
+      - https://github.com/robotframework/SeleniumLibrary#id6
+- Robot Frameworkin asennus
+   - Asennus: https://github.com/robotframework/robotframework/blob/master/INSTALL.rst#installing-with-pip
+      - Käyttäkää pip menetelmää
+   - Testaus:
+      - Ajakaa komento: robot --version
+- SeleniumLibraryn asennus
+   - Asennus: https://github.com/robotframework/SeleniumLibrary#installation
+      - Käyttäkää pip menetelmää
+- Asentakaa browser ajurit käyttämänne browserin mukaan
+   - Asennus: https://seleniumhq.github.io/selenium/docs/api/py/index.html#drivers
+   - Ajuri on oltava paikassa, joka löytyy järjestelmän PATH muuttujasta
+      1. Lisätään uusi tiedostopolku PATH muuttujaan: 
+         - Windows: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
+      (2. Tai siirretään ajuri tiedostopolkuun, joka on jo PATH muuttujassa.)
+- Asentakaa Robot Framework Intellisense VSCode plugin extension managerista
+- Ajetaan demo appiksen testit ja varmistetaan, että asennus on onnnistunut.
+   - Kloonatkaa RobotFrameworkin WebDemo repo:
+      - git clone https://github.com/robotframework/WebDemo
+   - Testaus:
+      - Ajakaa komento (pystytetään Python pohjainen webserver testejä varten): python demoapp/server.py
+      - Ajakaa komento: robot login_tests
+      - Avatkaa logi-tiedosto browserilla: log.html
+
+Harjoitukset
+============
+- Kehitetään UI testejä SADE Innovationsin websivulle.
+
+Hyödyllisiä linkkejä:
+- Robot Frameworkin Quick Start Guide: https://github.com/robotframework/QuickStartGuide/blob/master/QuickStart.rst#introduction
+- SeleniumLibraryn keyword dokumentaatio: http://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
 
 
 
