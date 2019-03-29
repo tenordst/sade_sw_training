@@ -2,3 +2,11 @@
 .DS_Store
 .vscode
 __pycache__
+
+# Robot Framework log files
+RobotFramework/*/logs
+RobotFramework/*/log.html
+RobotFramework/*/output.xml
+RobotFramework/*/report.html
+RobotFramework/*/*.log
+RobotFramework/*/*.png
