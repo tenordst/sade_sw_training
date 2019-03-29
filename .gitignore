@@ -9,4 +9,4 @@ RobotFramework/*/log.html
 RobotFramework/*/output.xml
 RobotFramework/*/report.html
 RobotFramework/*/*.log
-RobotFramework/*/.png
+RobotFramework/*/*.png
