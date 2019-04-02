@@ -9,3 +9,8 @@ Valid Home Page
     Home Content Should Be Present
     Vision Content Should Be Present
     [Teardown]  Close Browser
+
+Valid Vision Punch Line
+    Open Browser To Main Page
+    Vision Punch Line Should Be Present
+    [Teardown]  Close Browser
