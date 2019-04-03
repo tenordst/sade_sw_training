@@ -2,6 +2,9 @@
 Documentation                               Home resources
 Library                                     SeleniumLibrary
 
+# Nämä keywordit on tarkoitettu ohjeelliseksi/malliksi eivätkä ne toimi lokaalissa ajoympäristössä,
+# jossa oletettua verkkosivua ei luonnollisesti ole saatavilla.
+
 *** Variables ***
 ${HOME_PUNCH_LINE}                          We believe there are lots of brilliant product and service ideas out there.\nDo you have one of those great ideas, which deserve to become real?
 ${VISION_PUNCH_LINE}                        Focus on your dream

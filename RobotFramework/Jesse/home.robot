@@ -3,6 +3,9 @@ Documentation       Test suite to test Home Page
 Resource            ./resources/global_keywords.robot
 Resource            ./resources/home_keywords.robot
 
+# Nämä testikeissit on tarkoitettu ohjeelliseksi/malliksi eivätkä ne toimi lokaalissa ajoympäristössä,
+# jossa oletettua verkkosivua ei luonnollisesti ole saatavilla.
+
 *** Test Cases ***
 Valid Home Page
     Open Browser To Main Page
