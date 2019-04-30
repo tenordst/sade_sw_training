@@ -3,7 +3,13 @@ Documentation                       Global resources
 Library                             SeleniumLibrary
 
 *** Variables ***
-${SERVER}                           sade-9af5f.firebaseapp.com
+
+# Luonnollisesti testejä ajetaan normaalitilanteissa vain lokaalissa ajoympäristössä,
+# tällöin web-sivun oikea palvelin ei kuormitu turhaan testisessiosta.
+# IP-osoite 127.0.0.1 tarkoittaa localhostia (eli testin ajajan omaa konetta).
+# 3000 on portti, joka on oletuksena esimerkiksi React web appiksen kehitysympäristössä.
+
+${SERVER}                           127.0.0.1:3000
 ${BROWSER}                          Chrome
 ${MAIN URL}                         https://${SERVER}/
 ${DELAY}                            0
