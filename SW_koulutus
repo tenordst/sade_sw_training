@@ -369,7 +369,7 @@ Agenda
 ======
 - Lambda palvelun tekeminen - kertaus
 - S3 lambda triggerin implementointi
-   - S3 eventin kytkeminen Lambdaan
+   - S3 eventin kytkeminen Lambdaan + eventin sisältö
 - AWS security malli
    - IAM role & privilege
    - Lambda IAM role ja sen saaminen kohdalleen
@@ -377,10 +377,21 @@ Agenda
 Harjoitukset
 ============
 - S3 pohjainen kuvien tunnistuspalvelu
-   - Ladataan labeloitävä tiedosto S3:een
-      - prefix images/labeled
-      - triggeröi lambdan joka käyttäen rekognition API:ia labeloi kuvan, kirjoittaa logiin labeloinnin tuloksen
-      - labeloinnin tulos tallennetaan S3 objektiin
+   - Lambda funktion toteutus joka triggeröityy kun tiedosto ladataan S3 hakemistoon
+   - Cloudwatch logien käyttö
+
+13. koulutus - 7.5.2019
+========================
+
+Harjoitukset
+============
+- Tarvittavan datan parsiminen sisään tulevasta event JSON olioista
+   - https://stackoverflow.com/questions/35911348/parsing-through-json-data-for-aws-sns-event-data-in-python
+- Rekognition API:n käyttö kuvalle joka ladattu S3:een
+   - Documetation: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.detect_labels
+   - Code example: https://docs.aws.amazon.com/code-samples/latest/catalog/python-rekognition-rekognition-image-python-detect-labels.py.html
+- Label datan parsiminen ja talletus objektin metadataan
+   -  https://stackoverflow.com/questions/39596987/how-to-update-metadata-of-an-existing-object-in-aws-s3-using-python-boto3
    
 
 
