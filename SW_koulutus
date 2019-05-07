@@ -316,7 +316,7 @@ Harjoitukset
 - Serverless Hello World lambda REST API
 
 
-11 & 12 Koulutus - 29.3.2019, 2.4.2019
+11. Koulutus - 29.3.2019
 =======================
 
 Agenda
@@ -325,11 +325,12 @@ Agenda
    - Intro 
       - https://robotframework.org/#introduction
       - https://www.slideshare.net/pekkaklarck/robot-framework-introduction
-      - https://github.com/robotframework/SeleniumLibrary#id6
    - Kuinka kirjoitetaan hyvä testitapaus?
       - https://github.com/robotframework/HowToWriteGoodTestCases/blob/master/HowToWriteGoodTestCases.rst
    - DOs and Don'ts
       - https://www.slideshare.net/pekkaklarck/robot-framework-dos-and-donts
+   - SeleniumLibrary
+      - https://github.com/robotframework/SeleniumLibrary#id6
 - Robot Frameworkin asennus
    - Asennus: https://github.com/robotframework/robotframework/blob/master/INSTALL.rst#installing-with-pip
       - Käyttäkää pip menetelmää
@@ -350,24 +351,37 @@ Agenda
       - git clone https://github.com/robotframework/WebDemo
    - Testaus:
       - Ajakaa komento (pystytetään Python pohjainen webserver testejä varten): python demoapp/server.py
-         - Ikkuna jää "jumittamaan" mutta se on normaalia.
-      - Ajakaa komento toisessa terminal/cmd ikkunassa: robot -v BROWSER:Chrome login_tests
+      - Ajakaa komento: robot login_tests
       - Avatkaa logi-tiedosto browserilla: log.html
 
 Harjoitukset
 ============
 - Kehitetään UI testejä SADE Innovationsin websivulle.
-- Kirjoitellaan testitapauksia:
-   1. Verifioidaan etusivulta kohdasta Vision löytyvä "punchline": Focus on your dream
-   2. Verifioidaan etusivulta Services sivulle siirtyminen ja, että 6 kpl:ta harmaita laatikkoja teksteineen näkyvissä
-   3. Verifioidaan Services-sivun laatikoiden klikkaus-toiminto ja sitä vastaavan otsikon ilmestyminen laatikoiden alapuolelle
-   4. Verifioidaan News-sivulle siirtyminen, vaihdetaan kieli US->FI, verifioidaan placeholder tekstin vaihtuminen
 
 Hyödyllisiä linkkejä:
 - Robot Frameworkin Quick Start Guide: https://github.com/robotframework/QuickStartGuide/blob/master/QuickStart.rst#introduction
-- Robot Framework BuiltIn Keywords: http://robotframework.org/robotframework/latest/libraries/BuiltIn.html
 - SeleniumLibraryn keyword dokumentaatio: http://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
 
+12. koulutus - 30.4.2019
+========================
+
+Agenda
+======
+- Lambda palvelun tekeminen - kertaus
+- S3 lambda triggerin implementointi
+   - S3 eventin kytkeminen Lambdaan
+- AWS security malli
+   - IAM role & privilege
+   - Lambda IAM role ja sen saaminen kohdalleen
+
+Harjoitukset
+============
+- S3 pohjainen kuvien tunnistuspalvelu
+   - Ladataan labeloitävä tiedosto S3:een
+      - prefix images/labeled
+      - triggeröi lambdan joka käyttäen rekognition API:ia labeloi kuvan, kirjoittaa logiin labeloinnin tuloksen
+      - labeloinnin tulos tallennetaan S3 objektiin
+   
 
 
          
